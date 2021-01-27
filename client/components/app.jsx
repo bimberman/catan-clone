@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from "react";
-import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://localhost:3000";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Room from "./room";
+import Chat from "./chat/chat";
 
 function App() {
-  const [response, setResponse] = useState("");
 
-  useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
-    socket.on("FromAPI", data => {
-      console.log(data);
-      setResponse(data);
-    });
-  }, []);
+  const [roomName, setRoomName] = React.useState("");
+  const [username, setUsername] = React.useState("");
+
+  const roomProps = {
+
+  }
+
+  const chatProps = {
+
+  }
 
   return (
-    <p>
-      It's <time dateTime={response}>{response}</time>
-    </p>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Room {...roomProps} />
+        <Route/>
+        <Route exact path="/:roomId">
+          <Chat {...chatProps}/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
