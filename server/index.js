@@ -22,14 +22,17 @@ app.use(express.json());
 // Run when client connects
 io.on("connection", (socket) => {
 
-  console.log(socket);
   // Join a conversation
-  const { roomId } = socket.handshake.query;
+  const { roomId, username } = socket.handshake.query;
   socket.join(roomId);
 
   // Listen for new messages
   socket.on(NEW_CHAT_MESSAGE_EVENT, (data) => {
-    io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data);
+    io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, {
+      "body": data.body,
+      "senderId": data.senderId,
+      "username": username
+    });
   });
 
   // Leave the room if the user closes the socket
@@ -45,7 +48,6 @@ io.on("connection", (socket) => {
 
   // /api/health-check/ route
   const healthCheck = require('./routes/health-check');
-const { Socket } = require('dgram');
   app.use(healthCheck);
 
   app.use('/api', (req, res, next) => {

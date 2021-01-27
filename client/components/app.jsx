@@ -6,15 +6,17 @@ import Chat from "./chat/chat";
 
 function App() {
 
-  const [roomName, setRoomName] = React.useState("");
+  const [roomId, setRoomId] = React.useState("");
   const [username, setUsername] = React.useState("");
 
   const roomProps = {
-
+    setRoomId: setRoomId,
+    setUsername: setUsername
   }
 
   const chatProps = {
-
+    roomId: roomId,
+    username: username
   }
 
   return (
@@ -22,7 +24,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Room {...roomProps} />
-        <Route/>
+        </Route>
         <Route exact path="/:roomId">
           <Chat {...chatProps}/>
         </Route>

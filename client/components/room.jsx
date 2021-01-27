@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Room = () => {
+const Room = (props) => {
   const [roomName, setRoomName] = React.useState("");
   const [username, setUsername] = React.useState("");
 
@@ -13,6 +13,11 @@ const Room = () => {
   const handleRoomNameChange = (event) => {
     setRoomName(event.target.value);
   };
+
+  const sendInfo = () => {
+    props.setRoomId(roomName);
+    props.setUsername(username);
+  }
 
   return (
     <div className="home-container">
@@ -30,7 +35,10 @@ const Room = () => {
         onChange={handleUsernameChange}
         className="text-input-field"
       />
-      <Link to={`/${roomName}`} className="enter-room-button">
+      <Link
+        to={`/${roomName}`}
+        onClick={sendInfo}
+        className="enter-room-button">
         Join room
       </Link>
     </div>

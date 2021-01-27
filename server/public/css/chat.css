@@ -6,7 +6,7 @@
     margin: 16px;
 }
 
-.room-name {
+.room-name, .user-name {
     margin-top: 0;
 }
 
@@ -34,9 +34,9 @@
 .message-item {
     width: 55%;
     margin: 8px;
-    padding: 12px 8px;
+    padding: 5px 20px 20px 20px;
     word-break: break-word;
-    border-radius: 4px;
+    border-radius: 20px;
     color: white;
 }
 
@@ -50,6 +50,14 @@
     margin-right: auto;
 }
 
+.message-header.username{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
 .send-message-button {
     font-size: 28px;
     font-weight: 600;
@@ -61,4 +69,14 @@
 
 .messages-container, .new-message-input-field, .send-message-button {
     border-color: #9a9a9a;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.chat-header-block{
+    display: flex;
+}
+
+.user-name{
+    margin-left: auto;
 }
