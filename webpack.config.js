@@ -6,7 +6,7 @@ const publicPath = path.join(__dirname, 'server/public/');
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css']
   },
   entry: clientPath,
   output: {
@@ -24,9 +24,13 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: publicPath,
-    port: process.env.DEV_SERVER_PORT,
+    port: process.env.PORT,
     proxy: {
-      '/api': `http://localhost:${process.env.PORT}`
+      '/api': `http://localhost:${process.env.DEV_SERVER_PORT}`,
+      '/socket.io': {
+        target: `http://localhost:${process.env.DEV_SERVER_PORT}`,
+        we: true
+      }
     },
     historyApiFallback: true,
     host: '0.0.0.0',

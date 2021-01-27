@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Catan Game in React!</h1>
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.querySelector('#root')
+);
