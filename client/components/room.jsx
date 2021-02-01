@@ -6,19 +6,6 @@ const Room = (props) => {
   const [roomName, setRoomName] = React.useState("");
   const [username, setUsername] = React.useState("");
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handleRoomNameChange = (event) => {
-    setRoomName(event.target.value);
-  };
-
-  const sendInfo = () => {
-    props.setRoomId(roomName);
-    props.setUsername(username);
-  }
-
   return (
     <div className="home-container">
       <input
@@ -44,5 +31,18 @@ const Room = (props) => {
     </div>
   );
 };
+
+const handleUsernameChange = (event) => {
+  setUsername(event.target.value);
+};
+
+const handleRoomNameChange = (event) => {
+  setRoomName(event.target.value);
+};
+
+const sendInfo = () => {
+  props.setRoomId(roomName);
+  props.setUsername(username);
+}
 
 export default Room;

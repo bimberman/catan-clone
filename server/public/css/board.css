@@ -1,0 +1,40 @@
+.board-piece.hex{
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lumber{
+  background-image: url("../images/lumber.png");
+}
+
+.brick{
+  background-image: url("../images/brick.png");
+}
+
+.sheep{
+  background-image: url("../images/sheep.png");
+}
+
+.wheat{
+  background-image: url("../images/wheat.png");
+}
+
+.ore{
+  background-image: url("../images/ore.png");
+}
+
+@media all and (orientation: landscape) {
+  .board-piece.hex{
+     width: 5vw;
+     height: 5vw;
+  }
+}
+
+@media all and (orientation: portrait) {
+  .board-piece.hex{
+     width: 5vh;
+     height: 5vh;
+  }
+}

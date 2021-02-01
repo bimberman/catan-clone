@@ -30,9 +30,9 @@ const Chat = (props) => {
               key={i}
               className={`message-item ${message.ownedByCurrentUser ? "my-message" : "received-message"
                 }`}>
-              <h4 className="message-header username">
+              <div className="message-header username">
                 {message.username}
-              </h4>
+              </div>
               {message.body}
             </li>
           ))}
