@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Room from "./room";
-import Chat from "./chat/chat";
-import Board from './board/board';
+import Room from "./Room";
+import Chat from "./chat/Chat";
+import Board from './board/Board';
 
 const App = () => {
 

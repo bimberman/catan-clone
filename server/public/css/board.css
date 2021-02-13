@@ -1,40 +1,79 @@
+.game-board {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .board-piece.hex{
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  width: 135px;
+  height: 115px;
 }
 
 .lumber{
   background-image: url("../images/lumber.png");
 }
 
+.lumber:hover{
+  background-image: url("../images/lumber-hover.png");
+}
+
 .brick{
   background-image: url("../images/brick.png");
+}
+
+.brick:hover{
+  background-image: url("../images/brick-hover.png");
 }
 
 .sheep{
   background-image: url("../images/sheep.png");
 }
 
+.sheep:hover{
+  background-image: url("../images/sheep-hover.png");
+}
+
 .wheat{
   background-image: url("../images/wheat.png");
+}
+
+.wheat:hover{
+  background-image: url("../images/wheat-hover.png");
 }
 
 .ore{
   background-image: url("../images/ore.png");
 }
 
+.ore:hover{
+  background-image: url("../images/ore-hover.png");
+}
+
+.desert{
+  background-image: url("../images/desert.png");
+}
+
+.desert:hover{
+  background-image: url("../images/desert-hover.png");
+}
+
 @media all and (orientation: landscape) {
   .board-piece.hex{
-     width: 5vw;
-     height: 5vw;
+     width: 8.2vw;
+     height: 7vw;
   }
 }
 
 @media all and (orientation: portrait) {
   .board-piece.hex{
-     width: 5vh;
-     height: 5vh;
+     width: 8.2vh;
+     height: 7vh;
   }
 }

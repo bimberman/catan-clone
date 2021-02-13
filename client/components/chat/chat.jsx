@@ -1,7 +1,7 @@
 // Chat inspired by code from Jakub Kozak: https://github.com/pixochi/socket.io-react-hooks-chat
 
 import React from "react";
-import useChat from "./useChat";
+import useChat from "./UseChat";
 
 const Chat = (props) => {
   const { roomId, username } = props; // Gets roomId from URL
